@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Compasso Uol</string>
+    <string name="lb_refresh">Atualizar</string>
+    <string name="lb_connection_error">Erro de Conexão</string>
+    <string name="message_no_perform_action">Não foi encontrado nenhum app capaz de executar esta ação.</string>
+    <string name="lb_share">Compartilhar</string>
+    <string name="lb_share_with">Compartilhar com:</string>
+    <string name="lb_location">Localização</string>
+    <string name="lb_checkin">Participar</string>
+    <string name="button_cancel">Cancelar</string>
+    <string name="button_confirm">Confirmar</string>
+    <string name="lb_title_event_register">Insira seus dados abaixo:</string>
+    <string name="lb_name">Nome</string>
+    <string name="lb_email">Email</string>
+    <string name="lb_registered_user">Cadastro realizado com sucesso!</string>
+    <string name="lb_register_erro">Desculpe, ocorreu um erro. Não foi possível cadastrar.</string>
+    <string name="lb_empty_values">Todos os campos devem ser preenchidos. Por favor tente novamente.</string>
+</resources>

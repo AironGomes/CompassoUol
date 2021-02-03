@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.airongomes.compassouol.detail.DetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingBottom="10dp"
+            android:clipToPadding="false"
+            app:layout_constraintBottom_toTopOf="@+id/location"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:statusDoneDetail="@{viewModel.status}"
+            tools:context=".detail.DetailFragment">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/image_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@color/background"
+                    android:scaleType="center"
+                    android:visibility="gone"
+                    app:imageAdapter="@{viewModel.event.image}"
+                    tools:srcCompat="@drawable/ic_broken"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/date_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="8dp"
+                    android:textColor="#777777"
+                    android:textSize="14sp"
+                    app:dateAdapter="@{viewModel.event.date}"
+                    tools:text="date" />
+
+                <TextView
+                    android:id="@+id/title_detail"
+                    style="@style/style_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.event.title}"
+                    tools:text="title" />
+
+                <TextView
+                    android:id="@+id/description_detail"
+                    style="@style/style_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.event.description}"
+                    tools:text="description" />
+
+                <TextView
+                    android:id="@+id/price_detail2"
+                    style="@style/style_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primaryColor"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:priceAdapter="@{viewModel.event.price}"
+                    tools:text="VALOR" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/checkin"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/lb_checkin"
+            app:icon="@drawable/ic_check"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:statusDoneDetail="@{viewModel.status}" />
+
+        <Button
+            android:id="@+id/location"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:onClick="@{() -> viewModel.getLocation()}"
+            android:text="@string/lb_location"
+            android:enabled="false"
+            app:enableLocation="@{viewModel.event}"
+            app:icon="@drawable/ic_location"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:statusDoneDetail="@{viewModel.status}" />
+
+        <!--    Teste de Conexão    -->
+        <ImageView
+            android:id="@+id/image_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:statusAdapterDetail="@{viewModel.status}"
+            tools:srcCompat="@drawable/ic_wifi_off" />
+
+        <TextView
+            android:id="@+id/error_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/lb_connection_error"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_status"
+            app:statusErrorDetail="@{viewModel.status}" />
+
+        <Button
+            android:id="@+id/refresh_connection"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="@{() -> viewModel.loadEventDetail()}"
+            android:text="@string/lb_refresh"
+            android:visibility="gone"
+            app:icon="@drawable/ic_refresh"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/error_message"
+            app:statusErrorDetail="@{viewModel.status}" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
