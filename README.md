@@ -8,9 +8,9 @@ Abaixo segue o link com a descrição e requisitos do teste:
 
 https://github.com/WoopSicredi/jobs/issues/1
 
-___
+________________________________________________________________________________
 Descrição:
--
+--------------------------------------------------------------------------------
 
 O aplicativo foi desenvolvido com a IDE Android Studio e programação em Kotlin.
 
