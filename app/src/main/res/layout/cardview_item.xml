@@ -35,35 +35,30 @@
                 app:imageAdapter="@{eventProperty.image}"
                 tools:srcCompat="@drawable/ic_broken"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
             <TextView
                 android:id="@+id/eventTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:text="@{eventProperty.title}"
                 android:singleLine="true"
                 android:ellipsize="marquee"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 tools:text="Title"/>
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:text="@{eventProperty.description}"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
                 android:lines="2"
                 android:ellipsize="marquee"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary"
                 tools:text="Description"/>
-
-            </LinearLayout>
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
