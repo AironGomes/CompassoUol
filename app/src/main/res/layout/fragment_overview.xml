@@ -16,41 +16,48 @@
         android:background="@color/backgroundLight"
         tools:context=".overview.OverviewFragment">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:statusDone="@{viewModel.status}"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:statusDone="@{viewModel.status}" />
 
             <ImageView
                 android:id="@+id/image_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:statusAdapter="@{viewModel.status}"
-                tools:srcCompat="@drawable/ic_wifi_off" />
+                tools:srcCompat="@drawable/ic_wifi_off"
+                tools:visibility="gone" />
 
             <TextView
                 android:id="@+id/error_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Erro de Conexão"
+                android:text="@string/lb_connection_error"
                 android:textAppearance="?attr/textAppearanceHeadline5"
                 android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@+id/image_status"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:statusError="@{viewModel.status}"/>
+                app:statusError="@{viewModel.status}"
+                tools:visibility="gone"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
