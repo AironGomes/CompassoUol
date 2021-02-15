@@ -54,7 +54,8 @@ class OverviewFragment : Fragment() {
         // Atualizar lista do Recyclerview
         viewModel.eventList.observe(viewLifecycleOwner, Observer {
             if (it != null) {
-                Log.i("Result", "event de novo")
+//                Log.i("Result", "carregar evento novamente")
+
                 // notifyDataSetChanged garante atualização correta quando carregados
                 // os eventos pelo retrofit
                 adapter.notifyDataSetChanged()
