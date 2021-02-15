@@ -7,11 +7,9 @@ Projeto (Teste) criado para a empresa Compasso Uol.
 Abaixo segue o link com a descrição e requisitos do teste:
 
 https://github.com/WoopSicredi/jobs/issues/1
+________________________________________________________________________________
 
-___
-Descrição:
--
-
+## Descrição:
 O aplicativo foi desenvolvido com a IDE Android Studio e programação em Kotlin.
 
 Foi utilizada a arquitetura MVVM para o aplicativo.
@@ -27,6 +25,9 @@ Foi utilizado Retrofit e Moshi para pegar a lista de eventos e enviar informaç�
 O uso do Moshi possibilitou a conversão Json / Kotlin-objeto de forma simples através de data classes.
 
 Foi utilizado Glide para inserir as imagens obtidas por html na imageView.
+________________________________________________________________________________
+
+<img src="/Screenshot/tela_inicial01.png" width=270> <img src="/Screenshot/tela_inicial02.png" width=270> <img src="/Screenshot/detalhes.png" width=270>
 
 
 
