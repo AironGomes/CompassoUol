@@ -39,14 +39,14 @@ class CustomDialog : DialogFragment(){
                        val userName = view.findViewById<EditText>(R.id.name_text).text.toString()
                        val userEmail = view.findViewById<EditText>(R.id.email_text).text.toString()
 
-                        if(userName.isNotEmpty() && userEmail.isNotEmpty()) {
+                        if(userName.isNotBlank() && userEmail.isNotBlank()) {
                             // Adiciona as Strings obtidas na função getResult da referência
                                 // da interface DialogListener
                             listener.getResult(userName, userEmail)
                             dialog.dismiss()
                         } else {
                             // Mostrar toast se o usuário não preencheu algum campo
-                            Log.i("Result", "Empty values")
+                            Log.i("Result", "Empty or Blank values")
                             Toast.makeText(context,
                                 getString(R.string.lb_empty_values),
                                 Toast.LENGTH_LONG)
